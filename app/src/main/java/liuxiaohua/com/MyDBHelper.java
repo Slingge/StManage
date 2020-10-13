@@ -4,10 +4,30 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class MyDBHelper extends SQLiteOpenHelper {
 
+
+    public final String tableName = "student";
+
+    public final String ID = "id";
+    public final String NAME = "name";
+    public final String STUID = "stuId";
+    public final String CLASSNAME = "className";
+    public final String AGE = "age";
+
+    /*创建表语句 语句对大小写不敏感 create table 表名(字段名 类型，字段名 类型，…)*/
+    private final String CREATE_PERSON = "create table " + tableName + "(" +
+            ID + " integer primary key," +
+            NAME + " text ," +
+            STUID + " text," +
+            CLASSNAME + " text," +
+            AGE + " text" +
+            ")";
+
     public MyDBHelper(Context context) {
+
         /**
          * 参数说明：
          *
@@ -30,9 +50,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table contactinfo (id integer primary key autoincrement, name varchar(4), phone varchar(20))");
+        db.execSQL(CREATE_PERSON);
     }
-
 
 
     @Override

@@ -81,7 +81,7 @@
             android:textSize="15sp" />
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/et_id"
+            android:id="@+id/et_studentID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
